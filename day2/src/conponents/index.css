@@ -1,0 +1,85 @@
+html,body{
+  width: 100%;
+  /* background: #808080; */
+  background: url("../images/0.jpg") no-repeat center ;
+  height: 100%;
+  background-size: 100%;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+.container{
+  position: relative;
+    width: 800px;
+    height: 300px;
+    border: 5px solid rgb(216, 112, 193);
+    margin: 100px auto;
+    overflow: hidden;
+}
+.container ul{
+  position: absolute;
+  height: 300px;
+  left: 0;
+  top: 0;
+}
+.container ul li{
+  width: 800px;
+  height: 300px;
+  float: left;
+}
+.container ul li img{
+  width: 800px;
+  height: 300px;
+}
+.container .Slider-arrow{
+   width: 800px;
+   height: 40px;
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%)
+}
+.container .Slider-arrow span{
+  width: 30px;
+  height: 40px;
+  display: block;
+  background:rgba(0,0,0,.3);
+  color:#fff;
+  text-align: center;
+  line-height: 40px;
+  user-select: none;
+  cursor: pointer;
+  transition:  all .3s linear
+}
+.container .Slider-arrow span:hover{
+  background: #000;
+}
+.container .Slider-arrow span:nth-child(1){
+  float: left;
+}
+.container .Slider-arrow span:nth-child(2){
+  float: right;
+}
+.container .SliderDots1{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom:20px ; 
+  text-align: center;
+}
+.container .SliderDots1 span{
+  background: #fff;
+  display:inline-block;
+  margin: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.container .SliderDots1 span.active{
+  background:green ;
+}
