@@ -1,8 +1,8 @@
 # 代码提交流程
 
-1. git add .
+1. git add . 提交所有文件
 2. git commit -m '提交原因'
-3. git push
+3. git push 推送到远程仓库
 4. git config --global user.name "" 本地仓库配置git用户名
 5. git config --global user.email "372909885@qq.com" 本地仓库配置git邮箱
 6. git config --list 查看配置的信息。
