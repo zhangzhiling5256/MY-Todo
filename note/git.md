@@ -126,10 +126,10 @@ var utils = (function () {
 
 [WINDOWS]
 
-1. $set HTPPS=true&&yarn start
-2. $set PORT=1234&&yarn start
+1. $ set HTPPS=true&&yarn start
+2. $ set PORT=1234&&yarn start
 
 [MAC/LINUX]
 
-1. $HTTPS=true yarn start
-2. $PORT=1234 yanr start
+1. $ HTTPS=true yarn start
+2. $ PORT=1234 yanr start
