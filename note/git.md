@@ -121,3 +121,15 @@ var utils = (function () {
 
 
 ```
+
+## 该端口号和协议
+
+[WINDOWS]
+
+1. $set HTPPS=true&&yarn start
+2. $set PORT=1234&&yarn start
+
+[MAC/LINUX]
+
+1. $HTTPS=true yarn start
+2. $PORT=1234 yanr start
