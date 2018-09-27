@@ -4,7 +4,7 @@
 2. git commit -m '提交原因'
 3. git push 推送到远程仓库
 4. git config --global user.name "" 本地仓库配置git用户名
-5. git config --global user.email "372909885@qq.com" 本地仓库配置git邮箱
+5. git config --global user.email "435755479@qq.com" 本地仓库配置git邮箱
 6. git config --list 查看配置的信息。
 7. git --version 查看git的版本信息
 8. git fetch --all   查询地址
@@ -122,14 +122,108 @@ var utils = (function () {
 
 ```
 
-## 该端口号和协议
+## 改端口号和协议
 
-[WINDOWS]
+[WINDOWS]版本
 
 1. $ set HTPPS=true&&yarn start
 2. $ set PORT=1234&&yarn start
 
-[MAC/LINUX]
+[MAC/LINUX]版本
 
 1. $ HTTPS=true yarn start
 2. $ PORT=1234 yanr start
+
+## 基于脚手架 安装less 需增加的配置项
+
+```javaScript
+[webpack-config.dev  159-193]
+ {
+            test: /\.(css|less)$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+              {
+                loader: require.resolve('less-loader')
+              },
+            ],
+          },
+
+[webpack.config.prod 169-212]
+
+{
+            test: /\.(css|less)$/,
+            loader: ExtractTextPlugin.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve('style-loader'),
+                    options: {
+                      hmr: false,
+                    },
+                  },
+                  use: [
+                    {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                        importLoaders: 1,
+                        minimize: true,
+                        sourceMap: shouldUseSourceMap,
+                      },
+                    },
+                    {
+                      loader: require.resolve('postcss-loader'),
+                      options: {
+                        // Necessary for external CSS imports to work
+                        // https://github.com/facebookincubator/create-react-app/issues/2677
+                        ident: 'postcss',
+                        plugins: () => [
+                          require('postcss-flexbugs-fixes'),
+                          autoprefixer({
+                            browsers: [
+                              '>1%',
+                              'last 4 versions',
+                              'Firefox ESR',
+                              'not ie < 9', // React doesn't support IE8 anyway
+                            ],
+                            flexbox: 'no-2009',
+                          }),
+                        ],
+                      },
+                    },
+                    {
+                      loader: require.resolve('less-loader')
+                    }
+                  ],
+                },
+                extractTextPluginOptions
+              )
+            ),
+            // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+```
