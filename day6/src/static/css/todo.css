@@ -1,0 +1,40 @@
+.panel{
+  margin: 20px auto ;
+  width: 500px;
+}
+.panel .panel-heading .panel-title {
+  margin-bottom: 20px;
+}
+.panel .panel-heading .panel-title .count{
+  color:#9D0800;
+  font-weight: bold;
+}
+.panel .panel-boody .list-group .list-group-item{
+  position: relative;
+}
+.panel .panel-boody .list-group .list-group-item input{
+   vertical-align: top;
+}
+.panel .panel-boody .list-group .list-group-item span{
+  margin-left: 10px;
+  vertical-align: top;
+}
+.panel .panel-boody .list-group .list-group-item span.complete{
+  text-decoration: line-through;
+  color:#d4d3d3;
+}
+.panel .panel-boody .list-group .list-group-item a{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  top:50%;
+  right: 10px;
+  margin-top: -10px;
+  opacity: 0;
+  transition: opacity 1s linear
+}
+.panel .panel-boody .list-group .list-group-item:hover a{
+ opacity: 1;  
+}
